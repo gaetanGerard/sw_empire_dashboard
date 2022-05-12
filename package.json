@@ -1,0 +1,26 @@
+{
+  "name": "sw_empire_dashboard",
+  "version": "1.0.0",
+  "description": "i will build a Star Wars dashboard where the user (a minion of the empire) will fill a form for add new bounty or wanted people around the empire (should have the possibility to edit the status of the wanted with captured, deceased, ...)",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend": "cd client && npm start",
+    "backend": "cd server && npm run dev",
+    "start": "concurrently \"npm run frontend\" \"npm run backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaetanGerard/sw_empire_dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaetanGerard/sw_empire_dashboard/issues"
+  },
+  "homepage": "https://github.com/gaetanGerard/sw_empire_dashboard#readme"
+}
