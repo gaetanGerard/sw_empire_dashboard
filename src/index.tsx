@@ -4,6 +4,7 @@ import './index.scss';
 import App from './components/App';
 
 // Import Font
+import './fonts/aurebesh/Aurebesh.otf'
 import './fonts/starjedi/Starjedi.ttf'
 
 // Import Provider

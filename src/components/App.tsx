@@ -18,7 +18,8 @@ function App() {
 
   return (
     <div>
-
+      <p className="starwars">just a test for see starwars font still work</p>
+      <p className="aurebesh">just a test for see aurebesh font still work</p>
     </div>
   );
 }

@@ -2,6 +2,14 @@
 @import "./mixin.scss";
 
 body {
-  background-color: $bg-main-color;
+  background-color: $galaxy-black;
+  color: $unity-white;
+}
+
+.starwars {
   font-family: "starwars";
+}
+
+.aurebesh {
+  font-family: "aurebesh";
 }
