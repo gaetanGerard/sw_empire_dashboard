@@ -11,7 +11,7 @@ of the benevolant empire.
 As a specialist of the Empire you were granted the Access to the Threat Management System (TMS) unfortunetely your user was not created yet so Lord Vador give you its credentials for perform your task
 
 user: lordVador01
-password: IloveTheDarkSide123
+password: Ilovethedarkside123
 
 ## Welcome Pack (Setup)
 
