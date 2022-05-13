@@ -1,0 +1,121 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.form-container {
+    text-align: left;
+    .helperText {
+        padding: 3px;
+        color: $imperial-red;
+        &-hide {
+            display: none;
+        }
+    }
+}
+
+.form-field {
+    display: block;
+
+    &--is-active {
+      .form-field-control {
+        &::after {
+        //   border-bottom: 2px solid $dim-gray;
+          transform: scaleX(150);
+        }
+        .form-field-label {
+          color: $coruscant-blue;
+          font-weight: $font-weight-normal;
+          @include label-active();
+        }
+      }
+    }
+    &--is-filled {
+      .form-field-label {
+        @include label-active();
+      }
+    }
+    &--is-empty {
+        .form-field-control {
+            &::after {
+                border-bottom: 2px solid $imperial-red;
+                transform: scaleX(150);
+            }
+        }
+    }
+    .form-container {
+        .helperText-show {
+            display: block;
+        }
+    }
+}
+
+.errorStatus {
+  .inputContainer {
+    .form-container {
+      .helperText-show {
+          display: block;
+      }
+    }
+  }
+}
+
+.form-field-label {
+    color: $coruscant-blue;
+    display: block;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-normal;
+    left: 0;
+    margin: 0;
+    padding: 18px 12px 0 ;
+    position: absolute;
+    top: 0;
+    transition: all $animation-duration;
+}
+.form-field-input,
+.form-field-textarea {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid $valor-green;
+    color: $coruscant-blue;
+    display: block;
+    font-size: $font-size-medium;
+    margin-top: 24px;
+    outline: 0;
+    padding: 0 12px 10px 12px;
+    min-width: 450px;
+}
+.form-field-textarea {
+    height: 150px;
+}
+
+.form-field-control {
+  background: $unity-white;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &.dim {
+    background: $coruscant-blue;
+    input {
+      color: $unity-white;
+      border: none;
+      margin-top: 0;
+      padding: 8px 12px;
+      font-size: $font-size-large;
+    }
+  }
+
+  &::after {
+  //   border-bottom: 2px solid $coruscant-blue;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    transform: scaleX(0);
+    transition: all $animation-duration;
+    width: 1%;
+  }
+}

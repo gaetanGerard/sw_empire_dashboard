@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+@mixin label-active() {
+    font-size: $font-size-extra-small;
+    transform: translateY(-14px);
+}

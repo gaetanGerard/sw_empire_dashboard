@@ -13,3 +13,12 @@ body {
 .aurebesh {
   font-family: "aurebesh";
 }
+
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}

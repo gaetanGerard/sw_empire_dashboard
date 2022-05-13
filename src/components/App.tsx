@@ -7,6 +7,7 @@ import '../styles/App.scss';
 // import { AuthContext } from '../context/auth/AuthProvider';
 
 // Import Components
+import Auth from './pages/Auth';
 
 function App() {
   // const { login, user } = useContext(AuthContext);
@@ -17,9 +18,8 @@ function App() {
 
 
   return (
-    <div>
-      <p className="starwars">just a test for see starwars font still work</p>
-      <p className="aurebesh">just a test for see aurebesh font still work</p>
+    <div className="app">
+      <Auth />
     </div>
   );
 }
