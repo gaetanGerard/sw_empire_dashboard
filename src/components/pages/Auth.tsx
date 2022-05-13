@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react'
-import { UNSAFE_NavigationContext, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Import Component
 import Input from '../ui/Input';
@@ -46,7 +46,8 @@ const Auth = (props: Props) => {
     if(counter === 3) {
       navigate("/intrusion-alert");
     }
-  }, [counter])
+    if(localStorage.getItem('user')) navigate("/home")
+  }, [counter, navigate])
 
   return (
     <div className="auth-container">

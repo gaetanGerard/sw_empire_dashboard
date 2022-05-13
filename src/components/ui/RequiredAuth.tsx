@@ -7,7 +7,7 @@ type RequiredAuthProps = {
 
 const RequiredAuth = ({ children }: RequiredAuthProps) => {
     const location = useLocation();
-    if(localStorage.getItem('user')) {
+    if(localStorage.getItem('user') === null) {
         return <Navigate to="/" state={{ from: location }} />;
     } else {
         return children;
