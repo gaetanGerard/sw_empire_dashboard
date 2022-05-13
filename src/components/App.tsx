@@ -8,7 +8,7 @@ import Empire from './ui/icons/Empire';
 
 function App() {
   return (
-    <div className="app">
+    <div>
       <Empire />
     </div>
   );

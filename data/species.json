@@ -1,0 +1,52 @@
+{
+    "species": {
+        "organic": [
+            "anzellan",
+            "aqualish",
+            "arcona",
+            "besalisk",
+            "bothan",
+            "chadrafan",
+            "chagrian",
+            "chiss",
+            "clawdites",
+            "duross",
+            "gamorrean",
+            "gand",
+            "gran",
+            "gungan",
+            "human",
+            "hutt",
+            "ishitib",
+            "ithorian",
+            "mythrol",
+            "mandalorian",
+            "nelvaanian",
+            "nosaurian",
+            "ongree",
+            "quermian",
+            "sullustan",
+            "thisspasien",
+            "tholothien",
+            "toydorian",
+            "trandoshan",
+            "twilek",
+            "unknown",
+            "utapaun",
+            "wookie",
+            "zabrak",
+            "zeffo"
+        ],
+        "droid": [
+            "assassin",
+            "astromech",
+            "battle",
+            "bounty",
+            "medical",
+            "protocol",
+            "scout",
+            "strategy",
+            "torture"
+        ]
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "profiles": [
+        {
+            "name": "Obi-wan Kenobi",
+            "type": "Organic",
+            "profession": "Jedi",
+            "species": "Human",
+            "droid": null,
+            "picture": "jedi/human/19.webp",
+            "status": "Wanted",
+            "threat_level": "High",
+            "last_known_location": "Mustafar",
+            "list_of_crimes": ["Republic General", "Jedi Knight", "assassination attempt on the emperor"],
+            "wanted_condition": "Dead or Alive",
+            "bounty": "100000000"
+        },
+        {
+            "name": "Watto",
+            "type": "Organic",
+            "profession": "Junk Dealer",
+            "Species": "Toydarian",
+            "droid": null,
+            "picture": "characters/toydarian/14.webp",
+            "status": "Wanted",
+            "threat_level": "Low",
+            "last_known_location": "Tatooine",
+            "list_of_crimes": ["Junk Dealer", "Slaver", "Sell my mommy", "I don' like sand"],
+            "wanted_condition": "Dead",
+            "bounty": "10000"
+        },
+        {
+            "name": "Maldraxxa The Hutt",
+            "type": "Organic",
+            "profession": "Crime Boss Family",
+            "species": "Hutt",
+            "droid": null,
+            "picture": "characters/hutt/44.webp",
+            "status": "Wanted",
+            "threat_level": "Medium",
+            "last_known_location": "Nal Hutta",
+            "list_of_crimes": ["Crime Boss Family", "Slaver", "Drug Dealer"],
+            "wanted_condition": "Dead",
+            "bounty": "10000"
+        },
+        {
+            "name": "Jar Jar Binks",
+            "type": "Organic",
+            "profession": "Buffoon",
+            "species": "Gungan",
+            "droid": null,
+            "picture": "sith/gungan/01.jpg",
+            "status": "Wanted",
+            "threat_level": "High",
+            "last_known_location": "Coruscant",
+            "list_of_crimes": ["Should never have existed", "Presumed Sith", "Try to overthrow the Emperor"],
+            "wanted_condition": "Dead",
+            "bounty": "10000000000"
+        },
+        {
+            "name": "Dark Maul",
+            "type": "Organic",
+            "profession": "Sith",
+            "species": "Zabrak",
+            "droid": null,
+            "picture": "sith/zabrak/04.jpg",
+            "status": "Wanted",
+            "threat_level": "High",
+            "last_known_location": "Republic Destroyer",
+            "list_of_crimes": ["Sith", "Try to overthrow the Emperor", "Should not have survive Naboo", "Crimson Dawn Presume Boss"],
+            "wanted_condition": "Dead",
+            "bounty": "10000000000"
+        },
+        {
+            "name": "z5-p5",
+            "type": "Droid",
+            "profession": "Assassin",
+            "species": null,
+            "droid": "protocol",
+            "picture": "droid/protocol/14.webp",
+            "status": "Wanted",
+            "threat_level": "Medium",
+            "last_known_location": "Dantoine",
+            "list_of_crimes": ["Assassin", "Break Glass", "Translate Sith"],
+            "wanted_condition": "Destroyed",
+            "bounty": "1000000"
+        }
+    ]
+}
