@@ -1,26 +1,45 @@
 {
-  "name": "sw_empire_dashboard",
-  "version": "1.0.0",
-  "description": "i will build a Star Wars dashboard where the user (a minion of the empire) will fill a form for add new bounty or wanted people around the empire (should have the possibility to edit the status of the wanted with captured, deceased, ...)",
-  "main": "index.js",
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^16.11.34",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "node-sass": "^7.0.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.6.4",
+    "web-vitals": "^2.1.4"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "frontend": "cd client && npm start",
-    "backend": "cd server && npm run dev",
-    "start": "concurrently \"npm run frontend\" \"npm run backend\""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gaetanGerard/sw_empire_dashboard.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gaetanGerard/sw_empire_dashboard/issues"
-  },
-  "homepage": "https://github.com/gaetanGerard/sw_empire_dashboard#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
