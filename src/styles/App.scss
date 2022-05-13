@@ -4,6 +4,7 @@
 body {
   background-color: $galaxy-black;
   color: $unity-white;
+  font-family: "aurebesh";
 }
 
 .starwars {
@@ -12,6 +13,11 @@ body {
 
 .aurebesh {
   font-family: "aurebesh";
+  transition: $transition font-variation-settings ease-in;
+  &:hover {
+    transition: $transition font-variation-settings ease-in;
+    font-family: "starwars";
+  }
 }
 
 .app {

@@ -1,9 +1,12 @@
 import React, { ReactNode } from 'react';
 
+// Import utility functions
+import { starwars, aurebesh } from '../../utils/utility';
+
 type TypoProps = {
     HTMLElement: any,
     className?: string,
-    children: ReactNode
+    children: ReactNode,
 }
 
 const Typography = (props: TypoProps): JSX.Element => {
@@ -11,7 +14,7 @@ const Typography = (props: TypoProps): JSX.Element => {
     const Component = props.HTMLElement ? props.HTMLElement : "p";
 
     return (
-        <Component className={`typography-${props.HTMLElement} ${props.className}`}>{props.children}</Component>
+        <Component className={`typography-${props.HTMLElement} ${props.className}`} onMouseEnter={starwars} onMouseLeave={aurebesh}>{props.children}</Component>
     )
 }
 

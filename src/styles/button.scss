@@ -1,0 +1,44 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.btn {
+    background: transparent; outline: none;
+    position: relative;
+    background-color: $imperial-red;
+    padding: 15px 50px;
+    overflow: hidden;
+    font-family: "aurebesh";
+    color: $unity-white;
+    &:hover {
+        cursor: pointer;
+        &:before {
+            opacity: 1;
+            transform: translate(0,0);
+        }
+        div {
+            opacity: 0;
+            transform: translate(100%,0);
+        }
+    }
+    &:before {
+        content: attr(data-hover);
+        font-family: "starwars";
+        position: absolute;
+        top: 1.1em; left: 0;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 800;
+        font-size: .8em;
+        opacity: 0;
+        transform: translate(-100%,0);
+        transition: all .3s ease-in-out;
+    }
+    div {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 800;
+        font-size: .8em;
+        transition: all .3s ease-in-out;
+    }
+}
