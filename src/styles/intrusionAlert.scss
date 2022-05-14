@@ -1,0 +1,58 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.intrusionAlert-container {
+    background-image: url("../images/vador.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    header {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 60px;
+        height: 60px;
+        .empire-icon {
+            fill: white;
+            width: 160px;
+            height: 160px;
+            g {
+                transform: translate(199px, -28px);
+                width: 160px;
+                height: 160px;
+                path {
+                    transform: scale(-25%, 25%);
+                }
+            }
+        }
+    }
+    p {
+        width: 50%;
+        text-align: center;
+        &:hover {
+            font-family: "starwars";
+        }
+    }
+
+    a {
+        background-color: $imperial-red;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $unity-white;
+        margin-top: 30px;
+        width: 300px;
+        text-align:center;
+        vertical-align: middle;
+        &:hover {
+            font-family: "starwars";
+        }
+    }
+}
