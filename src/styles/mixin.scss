@@ -4,3 +4,10 @@
     font-size: $font-size-extra-small;
     transform: translateY(-14px);
 }
+
+// Mixin revelvant to icon who can change between page but could have some basic style
+
+@mixin empire-icon($fill: $unity-white, $transform: scale(-50%, 50%)) {
+    fill: $fill;
+    transform: $transform;
+}

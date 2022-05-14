@@ -1,0 +1,235 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.container {
+    width: 90vw;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 50px;
+    justify-content: space-between;
+    .backHome-container {
+        position: relative;
+        display: grid;
+        grid-template-rows: 300px 20px 50px;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        grid-gap: 20px;
+        text-align:center;
+        p:hover {
+            width: 744px;
+            font-family: $starwars;
+        }
+        a {
+            box-sizing: content-box;
+            text-decoration: none;
+            background-color: $imperial-red;
+            padding: 15px 10px;
+            color: $unity-white;
+            width: 205px;
+            text-align: center;
+            &:hover {
+                font-family: $starwars;
+            }
+        }
+        footer {
+            position: absolute;
+            bottom: 2%;
+            right: 0;
+            a {
+                background-color: transparent;
+                padding: 0;
+                font-size: $font-size-footer;
+                color: $durasteel-grey;
+            }
+        }
+    }
+}
+
+  .propaganda-container {
+    margin: 0 auto;
+    height: 910px;
+    width: 653px;
+    transform-style: preserve-3d;
+    background-image: linear-gradient(
+      -160deg,
+      #2f4661,
+      #31445f,
+      #425971,
+      #acb2b3,
+      #d7d0ca
+    );
+    text-transform: uppercase;
+    border: 20px solid #eeebe3;
+    box-sizing: border-box;
+    overflow: hidden;
+    &:hover #message {
+        font-family: $starwars;
+    }
+  }
+
+  #moon {
+    height: 650px;
+    width: 650px;
+    border-radius: 50%;
+    position: relative;
+    top: -300px;
+    left: 300px;
+    background-image: linear-gradient(
+      to bottom left,
+      #2f4661,
+      #2d3f5b,
+      #2d3f5b,
+      #a4a9b0
+    );
+    z-index: -1;
+  }
+
+  #stars {
+    position: absolute;
+    top: 0;
+    z-index: -2;
+
+  }
+
+  #ships {
+    position: relative;
+    height: 680px;
+    top: -240px;
+    z-index: 1;
+  }
+
+  .stars {
+    position: relative;
+    display: inline-block;
+    z-index: -1;
+    height: 500px;
+    width: 600px;
+    background-image: radial-gradient(
+        5px 5px at 20px 30px,
+        #eeebe3,
+        #eeebe3,
+        rgba(0, 0, 0, 0)
+      ),
+      radial-gradient(2px 2px at 40px 70px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(5px 5px at 50px 160px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 90px 40px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 130px 80px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(5px 5px at 160px 120px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 100px 100px;
+  }
+
+  .rstars {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 30px;
+    z-index: -2;
+    height: 200px;
+    width: 200px;
+    background-image: radial-gradient(
+        2px 2px at 20px 30px,
+        #eeebe3,
+        #eeebe3,
+        rgba(0, 0, 0, 0)
+      ),
+      radial-gradient(2px 2px at 40px 70px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 50px 160px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 90px 40px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 130px 80px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 160px 120px, #eeebe3, #eeebe3, rgba(0, 0, 0, 0));
+  }
+
+  #ships {
+   transform-style: preserve-3d;
+  }
+
+  .ships {
+    position: relative;
+    z-index: 5;
+  }
+
+  .ties {
+    margin-top: -130px;
+    margin-left: 20px;
+  transform: translateZ(40px);
+  }
+
+
+
+
+  #sd1 {
+    margin-top: -400px;
+    margin-left: 10px;
+    position: absolute;
+     transform: translateZ(30px);
+  }
+
+  #sd2 {
+    margin-left: 370px;
+    margin-top: -100px;
+    transform: translateZ(10px);
+  }
+
+  #sd3 {
+    margin-top: -420px;
+    margin-left: 35px;
+    position: absolute;
+  transform: translateZ(20px);
+  }
+
+  #sd4 {
+    margin-top: -410px;
+    margin-left: 325px;
+    position: absolute;
+
+  }
+
+  #ship {
+    margin-left: 370px;
+    margin-top: -20px;
+     transform: translateZ(40px);
+  }
+
+  #message {
+    margin-top: -620px;
+  }
+
+  #message img {
+    margin-top: -50px;
+    margin-bottom: 0;
+    margin-left: 35px;
+  }
+
+  .rb {
+    background-color: #a32426;
+    width: 105%;
+    margin-left: -20px;
+    color: #f9f3ec;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  h2.rb {
+    transform: rotatez(5deg);
+    padding-left: 5%;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .join {
+    color: #2a262f;
+    font-size: 2em;
+    align-self: flex-end;
+    transform: rotatez(-3deg);
+    margin-bottom: -25px;
+    margin-left: 365px;
+  }
+
+  h1.rb {
+    transform: rotatez(-3deg);
+    padding-left: 10%;
+    font-size: 3em;
+    margin-top: -25px;
+  }

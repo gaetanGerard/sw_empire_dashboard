@@ -4,19 +4,19 @@
 body {
   background-color: $galaxy-black;
   color: $unity-white;
-  font-family: "aurebesh";
+  font-family: $aurebesh;
 }
 
 .starwars {
-  font-family: "starwars";
+  font-family: $starwars;
 }
 
 .aurebesh {
-  font-family: "aurebesh";
+  font-family: $aurebesh;
   transition: $transition font-variation-settings ease-in;
   &:hover {
     transition: $transition font-variation-settings ease-in;
-    font-family: "starwars";
+    font-family: $starwars;
   }
 }
 

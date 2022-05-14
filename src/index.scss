@@ -59,13 +59,13 @@ table {
 */
 
 @font-face {
-	font-family: "starwars";
+	font-family: $starwars;
 	src: local("starwars"), url("./fonts/starjedi/Starjedi.ttf") format("truetype");
 	font-weight: normal;
 }
 
 @font-face {
-	font-family: "aurebesh";
+	font-family: $aurebesh;
 	src: local("aurebesh"), url("./fonts/aurebesh/Aurebesh.otf") format("truetype");
 	font-weight: normal;
 }

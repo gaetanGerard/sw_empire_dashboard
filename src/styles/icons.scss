@@ -1,0 +1,6 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.empire-icon {
+    @include empire-icon;
+}
