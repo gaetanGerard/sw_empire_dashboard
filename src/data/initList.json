@@ -1,6 +1,7 @@
 {
     "profiles": [
         {
+            "id": 0,
             "name": "Obi-wan Kenobi",
             "type": "Organic",
             "profession": "Jedi",
@@ -12,13 +13,15 @@
             "last_known_location": "Mustafar",
             "list_of_crimes": ["Republic General", "Jedi Knight", "assassination attempt on the emperor"],
             "wanted_condition": "Dead or Alive",
-            "bounty": "100000000"
+            "bounty": "100000000",
+            "canBeDeleted": false
         },
         {
+            "id": 1,
             "name": "Watto",
             "type": "Organic",
             "profession": "Junk Dealer",
-            "Species": "Toydarian",
+            "species": "Toydarian",
             "droid": null,
             "picture": "characters/toydarian/14.webp",
             "status": "Wanted",
@@ -26,9 +29,11 @@
             "last_known_location": "Tatooine",
             "list_of_crimes": ["Junk Dealer", "Slaver", "Sell my mommy", "I don' like sand"],
             "wanted_condition": "Dead",
-            "bounty": "10000"
+            "bounty": "10000",
+            "canBeDeleted": false
         },
         {
+            "id": 2,
             "name": "Maldraxxa The Hutt",
             "type": "Organic",
             "profession": "Crime Boss Family",
@@ -40,9 +45,11 @@
             "last_known_location": "Nal Hutta",
             "list_of_crimes": ["Crime Boss Family", "Slaver", "Drug Dealer"],
             "wanted_condition": "Dead",
-            "bounty": "10000"
+            "bounty": "10000",
+            "canBeDeleted": false
         },
         {
+            "id": 3,
             "name": "Jar Jar Binks",
             "type": "Organic",
             "profession": "Buffoon",
@@ -54,9 +61,11 @@
             "last_known_location": "Coruscant",
             "list_of_crimes": ["Should never have existed", "Presumed Sith", "Try to overthrow the Emperor"],
             "wanted_condition": "Dead",
-            "bounty": "10000000000"
+            "bounty": "10000000000",
+            "canBeDeleted": false
         },
         {
+            "id": 4,
             "name": "Dark Maul",
             "type": "Organic",
             "profession": "Sith",
@@ -68,9 +77,11 @@
             "last_known_location": "Republic Destroyer",
             "list_of_crimes": ["Sith", "Try to overthrow the Emperor", "Should not have survive Naboo", "Crimson Dawn Presume Boss"],
             "wanted_condition": "Dead",
-            "bounty": "10000000000"
+            "bounty": "10000000000",
+            "canBeDeleted": false
         },
         {
+            "id": 5,
             "name": "z5-p5",
             "type": "Droid",
             "profession": "Assassin",
@@ -82,7 +93,8 @@
             "last_known_location": "Dantoine",
             "list_of_crimes": ["Assassin", "Break Glass", "Translate Sith"],
             "wanted_condition": "Destroyed",
-            "bounty": "1000000"
+            "bounty": "1000000",
+            "canBeDeleted": false
         }
     ]
 }

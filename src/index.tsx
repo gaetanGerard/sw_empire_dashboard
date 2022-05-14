@@ -10,6 +10,7 @@ import './fonts/starjedi/Starjedi.ttf'
 
 // Import Provider
 import AuthProvider from './context/auth/AuthProvider';
+import WantedProvider from './context/wanted/WantedProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,9 +18,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <WantedProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </WantedProvider>
     </AuthProvider>
   </React.StrictMode>
 );

@@ -17,6 +17,10 @@
         align-items: center;
         grid-gap: 20px;
         text-align:center;
+        svg {
+          fill: $unity-white;
+          transform: scale(-50%, 50%);
+        }
         p:hover {
             width: 744px;
             font-family: $starwars;
