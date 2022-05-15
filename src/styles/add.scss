@@ -1,0 +1,51 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+.wanted-profile-detail-container {
+    .wanted-profile-detail {
+        .add-edit-wanted {
+            height: 800px;
+            width: 100%;
+            display: grid;
+            border: none;
+            border-radius: 0;
+            justify-content: center;
+            img {
+                border: 2px solid $durasteel-grey;
+                height: 500px;
+                width: 500px;
+                border-radius: 7px;
+            }
+            &:hover {
+                border-radius: 0;
+                img {
+                    transform: scale(1);
+                }
+            }
+            .btn-container {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                .btn-cancel {
+                    display: grid;
+                    justify-content: center;
+                    justify-items: center;
+                    align-content: center;
+                    align-items: center;
+                    background-color: $durasteel-grey;
+                    color: $unity_white;
+                    width: 150px;
+                    height: 45px;
+                    &:hover {
+                        height: 45px;
+                        font-family: "starwars";
+                        width: 150px;;
+                    }
+                }
+            }
+        }
+
+        .add-edit-form {
+            align-content: start;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
     "species": {
-        "organic": [
+        "Organic": [
             "anzellan",
             "aqualish",
             "arcona",
@@ -37,7 +37,7 @@
             "zabrak",
             "zeffo"
         ],
-        "droid": [
+        "Droid": [
             "assassin",
             "astromech",
             "battle",

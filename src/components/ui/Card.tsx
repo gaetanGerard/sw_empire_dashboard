@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import Components
@@ -10,23 +10,15 @@ import { WANTED } from '../../context/types';
 // Import Styles
 import '../../styles/card.scss';
 
-// Import utility
-import { loadImage } from '../../utils/utility';
-
 type Props = {
     wanted: WANTED
 }
 
 const Card = ({wanted}: Props) => {
-    const [imgSrc, setImgSrc] = useState('');
-
-    loadImage(wanted.picture, setImgSrc);
-
-
   return (
     <Link to="/wanted-profile-detail" className="card" state={{data: wanted}}>
         <div className="internal-card">
-            <img src={imgSrc} alt={`Wanted ${wanted.name}`} className={wanted.status === "Dead" ? "grayscale" : ""} />
+            <img src={`/images/${wanted.picture}`} alt={`Wanted ${wanted.name}`} className={wanted.status === "Dead" ? "grayscale" : ""} />
             <div className={wanted.status === "Captured" ? "wanted-status ws-white" : wanted.status === "Dead" ? "wanted-status ws-white" : "wanted-status ws-red"}>
                 <Typography HTMLElement="p">{wanted.status}</Typography>
             </div>

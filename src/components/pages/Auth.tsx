@@ -2,7 +2,7 @@ import React, { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 // Import Component
-import Input from '../ui/Input';
+import InputText from '../ui/InputText';
 import Typography from '../ui/Typography';
 
 // Import Context
@@ -52,8 +52,8 @@ const Auth = (props: Props) => {
   return (
     <div className="auth-container">
       <Typography HTMLElement="h2">Login</Typography>
-      <Input type="text" name="username" onChange={onChange} label="Username" errorMsg="Username Required" />
-      <Input type="password" name="password" onChange={onChange} label="Password" errorMsg="Password Required" />
+      <InputText fieldName="auth-username" type="text" name="username" onChange={onChange} label="Username" errorMsg="Username Required" />
+      <InputText fieldName="auth-password" type="password" name="password" onChange={onChange} label="Password" errorMsg="Password Required" />
       <Button dataHover="Logged In" btnType="button" onClick={onClick}><div>Logged In</div></Button>
     </div>
   )

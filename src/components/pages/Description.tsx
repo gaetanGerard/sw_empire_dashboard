@@ -4,9 +4,6 @@ import { useLocation, Link } from 'react-router-dom';
 // Import Styles
 import '../../styles/description.scss';
 
-// Import utility
-import { loadImage } from '../../utils/utility';
-
 // Import types
 import { WANTED } from '../../context/types';
 
@@ -20,11 +17,6 @@ type Props = {}
 const Description = (props: Props) => {
     const location = useLocation();
     const state = location.state as { data: WANTED };
-    const [imgSrc, setImgSrc] = useState('');
-    const [price, setPrice] = useState('');
-
-    loadImage(state.data.picture, setImgSrc);
-    loadImage("taka.png", setPrice);
 
     const onclick = () => {
         // function for delete Item
@@ -36,7 +28,7 @@ const Description = (props: Props) => {
         <Header />
         <div className="wanted-profile-detail">
             <div className="img-container">
-                <img src={imgSrc} alt={`Wanted ${state.data.name}`} className={state.data.status === "Dead" ? "grayscale" : ""} />
+                <img src={`/images/${state.data.picture}`} alt={`Wanted ${state.data.name}`} className={state.data.status === "Dead" ? "grayscale" : ""} />
             </div>
             <div className="wanted-description-container">
                 <div className="content-container">
@@ -69,8 +61,8 @@ const Description = (props: Props) => {
                         <Typography HTMLElement="p">{state.data.last_known_location}</Typography>
                     </div>
                     <div className="text-container">
-                        <Typography HTMLElement="p" className="bold">List of Crimes: </Typography>
-                        <Typography HTMLElement="ul">{state.data.list_of_crimes.map((crime, index) => {return <Typography HTMLElement="li" key={index}>{crime}</Typography>})}</Typography>
+                        <Typography HTMLElement="p" className="bold">Crimes: </Typography>
+                        <Typography HTMLElement="p">{state.data.crimes}</Typography>
                     </div>
                     <div className="text-container">
                         <Typography HTMLElement="p" className="bold">Wanted Condition: </Typography>
@@ -78,7 +70,7 @@ const Description = (props: Props) => {
                     </div>
                     <div className="text-container">
                         <Typography HTMLElement="p" className="bold">Bounty: </Typography>
-                        <Typography HTMLElement="p" className="imperial_credit">{state.data.bounty} <img src={price} alt="Imperial Credit" /> </Typography>
+                        <Typography HTMLElement="p" className="imperial_credit">{state.data.bounty} <img src={"/images/taka.png"} alt="Imperial Credit" /> </Typography>
                     </div>
                 </div>
                 <div className="btn-container">
