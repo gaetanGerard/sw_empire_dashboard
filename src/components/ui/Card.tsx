@@ -10,6 +10,9 @@ import { WANTED } from '../../context/types';
 // Import Styles
 import '../../styles/card.scss';
 
+// Import utility
+import { loadImage } from '../../utils/utility';
+
 type Props = {
     wanted: WANTED
 }
@@ -17,13 +20,7 @@ type Props = {
 const Card = ({wanted}: Props) => {
     const [imgSrc, setImgSrc] = useState('');
 
-    const loadImage = (imageName: string) => {
-        import(`../../images/${imageName}`).then(image => {
-            setImgSrc(image.default)
-        })
-    }
-
-    loadImage(wanted.picture);
+    loadImage(wanted.picture, setImgSrc);
 
 
   return (
