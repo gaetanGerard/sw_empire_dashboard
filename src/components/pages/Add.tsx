@@ -27,23 +27,23 @@ const Add: FC = (props: Props): JSX.Element => {
     const params = useParams();
     const state = location.state as { data: WANTED };
     const [noImg, setNoImg] = useState('/images/no_image.png');
-    const [wantedName, setWantedName] = useState<string|null>(null);
-    const [type, setType] = useState<string>('Organic');
-    const [profession, setProfession] = useState<string>('');
-    const [species, setSpecies] = useState<string|null>(null);
-    const [droid, setDroid] = useState<string|null>(null);
-    const [status, setStatus] = useState<string>('');
-    const [threatLevel, setThreatLevel] = useState<string>('');
-    const [lastKnownLocation, setLastKnownLocation] = useState<string>('');
-    const [crimes, setCrimes] = useState<string>('');
-    const [wantedCondition, setWantedCondition] = useState<string>('');
-    const [bounty, setBounty] = useState<string>('');
+    const [wantedName, setWantedName] = useState<string|null>(params.action === "edit" ? state.data.name : null);
+    const [type, setType] = useState<string>(params.action === "edit" ? state.data.type : 'Organic');
+    const [profession, setProfession] = useState<string>(params.action === "edit" ? state.data.profession : '');
+    const [species, setSpecies] = useState<string|null>(params.action === "edit" ? state.data.species : null);
+    const [droid, setDroid] = useState<string|null>(params.action === "edit" ? state.data.droid : null);
+    const [status, setStatus] = useState<string>(params.action === "edit" ? state.data.status : '');
+    const [threatLevel, setThreatLevel] = useState<string>(params.action === "edit" ? state.data.threat_level : '');
+    const [lastKnownLocation, setLastKnownLocation] = useState<string>(params.action === "edit" ? state.data.last_known_location : '');
+    const [crimes, setCrimes] = useState<string>(params.action === "edit" ? state.data.crimes : '');
+    const [wantedCondition, setWantedCondition] = useState<string>(params.action === "edit" ? state.data.wanted_condition : '');
+    const [bounty, setBounty] = useState<string>(params.action === "edit" ? state.data.bounty : '');
     const [pictureFromDBBool, setPictureFromDBBool] = useState<boolean>(false);
 
     const [speciesList, setSpeciesList] = useState<string[]>([]);
 
 
-    // console.log(params)
+    // console.log(params.action)
     // console.log(state.data)
 
     const onChange = (e: ChangeEvent<HTMLInputElement|HTMLSelectElement>) => {
@@ -91,18 +91,20 @@ const Add: FC = (props: Props): JSX.Element => {
 
     }, [type]);
 
+    console.log(species)
+
   return (
     <div className="wanted-profile-detail-container">
     <Header />
     <div className="wanted-profile-detail">
         <div className="img-container add-edit-wanted">
-            <img src={noImg} alt={"Placeholder"} />
-            <label className="checkbox-container">Use Picture from Database ?
+            <img src={params.action === "edit" ? state.data.picture : noImg} alt={"Placeholder"} />
+            {params.action === "edit" ? null : (<label className="checkbox-container">Use Picture from Database ?
                 <input type="checkbox" onChange={(e) => setPictureFromDBBool(e.target.checked)} name="pictureFromDB" />
                 <span className="checkmark"></span>
-            </label>
+            </label>)}
             <div className="btn-container">
-                <Button btnType="button" className="btn-detail" onClick={onclick}>Add</Button>
+                <Button btnType="button" className="btn-detail" onClick={onclick}>{params.action === "edit" ? "Edit" : "Add"}</Button>
                 <Link to="/home" className="btn-cancel">Cancel</Link>
             </div>
         </div>
@@ -110,7 +112,7 @@ const Add: FC = (props: Props): JSX.Element => {
             <div className="content-container">
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Name: </Typography>
-                    <InputText fieldName="add-edit-name" type="text" name="name" onChange={onChange} />
+                    <InputText fieldName="add-edit-name" type="text" name="name" onChange={onChange} value={wantedName} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Type: </Typography>
@@ -121,38 +123,38 @@ const Add: FC = (props: Props): JSX.Element => {
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Profession: </Typography>
                     <div className="custom-select">
-                        <Select options={["criminal", "droid", "jedi", "sith"]} name="profession" selected={profession} onChange={onChange} />
+                        <Select options={["Criminal", "Droid", "Jedi", "Sith"]} name="profession" selected={profession} onChange={onChange} />
                     </div>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">{type === "Organic" ? "Species" : "Droid"} :</Typography>
                     <div className="custom-select">
-                        <Select options={speciesList} name={type === "Organic" ? "Species" : "Droid"} selected={type} onChange={onChange} />
+                        <Select options={speciesList} name={type === "Organic" ? "Species" : "Droid"} selected={species ? species : droid} onChange={onChange} />
                     </div>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Status: </Typography>
-                    <InputText fieldName="add-edit-status" type="text" name="status" onChange={onChange}/>
+                    <InputText fieldName="add-edit-status" type="text" name="status" onChange={onChange} value={status}/>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Threat Level: </Typography>
-                    <InputText fieldName="add-edit-threat-level" type="text" name="threat_level" onChange={onChange} />
+                    <InputText fieldName="add-edit-threat-level" type="text" name="threat_level" onChange={onChange} value={threatLevel} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Last Known Location: </Typography>
-                    <InputText fieldName="add-edit-last-known-location" type="text" name="last_known_location" onChange={onChange}/>
+                    <InputText fieldName="add-edit-last-known-location" type="text" name="last_known_location" onChange={onChange} value={lastKnownLocation}/>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Crimes: </Typography>
-                    <InputText fieldName="add-edit-crimes" type="text" name="crimes" onChange={onChange} />
+                    <InputText fieldName="add-edit-crimes" type="text" name="crimes" onChange={onChange} value={crimes} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Wanted Condition: </Typography>
-                    <InputText fieldName="add-edit-wanted-condition" type="text" name="wanted_condition" onChange={onChange} />
+                    <InputText fieldName="add-edit-wanted-condition" type="text" name="wanted_condition" onChange={onChange} value={wantedCondition} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Bounty (Number): </Typography>
-                    <InputText fieldName="add-edit-bounty" type="text" name="bounty" onChange={onChange} />
+                    <InputText fieldName="add-edit-bounty" type="text" name="bounty" onChange={onChange} value={bounty} />
                 </div>
             </div>
         </div>
