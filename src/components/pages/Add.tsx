@@ -121,7 +121,7 @@ const Add: FC = (props: Props): JSX.Element => {
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Profession: </Typography>
                     <div className="custom-select">
-                        <Select options={["criminal", "droid", "jedi", "sith"]} name="profession" selected={type} onChange={onChange} />
+                        <Select options={["criminal", "droid", "jedi", "sith"]} name="profession" selected={profession} onChange={onChange} />
                     </div>
                 </div>
                 <div className="text-container">

@@ -28,7 +28,7 @@ const Description = (props: Props) => {
         <Header />
         <div className="wanted-profile-detail">
             <div className="img-container">
-                <img src={`/images/${state.data.picture}`} alt={`Wanted ${state.data.name}`} className={state.data.status === "Dead" ? "grayscale" : ""} />
+                <img src={state.data.picture} alt={`Wanted ${state.data.name}`} className={state.data.status === "Dead" ? "grayscale" : ""} />
             </div>
             <div className="wanted-description-container">
                 <div className="content-container">
