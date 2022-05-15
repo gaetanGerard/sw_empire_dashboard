@@ -18,6 +18,7 @@ import '../../styles/checkbox.scss';
 
 // Import data
 import data from '../../data/species.json';
+import folderLength from '../../data/foldersLength.json';
 
 type Props = {}
 
@@ -37,6 +38,7 @@ const Add: FC = (props: Props): JSX.Element => {
     const [crimes, setCrimes] = useState<string>('');
     const [wantedCondition, setWantedCondition] = useState<string>('');
     const [bounty, setBounty] = useState<string>('');
+    const [pictureFromDBBool, setPictureFromDBBool] = useState<boolean>(false);
 
     const [speciesList, setSpeciesList] = useState<string[]>([]);
 
@@ -56,6 +58,7 @@ const Add: FC = (props: Props): JSX.Element => {
         if(e.target.name === 'crimes') setCrimes(e.target.value);
         if(e.target.name === 'wanted_condition') setWantedCondition(e.target.value);
         if(e.target.name === 'bounty') setBounty(e.target.value);
+
       }
 
 
@@ -82,11 +85,11 @@ const Add: FC = (props: Props): JSX.Element => {
 
     useEffect(() => {
         setSpeciesList(data.species[type as keyof typeof data.species]);
-    }, [type, speciesList, wantedName])
+
+        console.log(folderLength);
 
 
-    // console.log(droid);
-    // console.log(species)
+    }, [type]);
 
   return (
     <div className="wanted-profile-detail-container">
@@ -95,7 +98,7 @@ const Add: FC = (props: Props): JSX.Element => {
         <div className="img-container add-edit-wanted">
             <img src={noImg} alt={"Placeholder"} />
             <label className="checkbox-container">Use Picture from Database ?
-                <input type="checkbox"/>
+                <input type="checkbox" onChange={(e) => setPictureFromDBBool(e.target.checked)} name="pictureFromDB" />
                 <span className="checkmark"></span>
             </label>
             <div className="btn-container">
@@ -107,7 +110,7 @@ const Add: FC = (props: Props): JSX.Element => {
             <div className="content-container">
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Name: </Typography>
-                    <InputText fieldName="add-edit-name" type="text" name="name" onChange={onChange} label="Name" errorMsg="" />
+                    <InputText fieldName="add-edit-name" type="text" name="name" onChange={onChange} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Type: </Typography>
@@ -117,7 +120,9 @@ const Add: FC = (props: Props): JSX.Element => {
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Profession: </Typography>
-                    <InputText fieldName="add-edit-profession" type="text" name="profession" onChange={onChange} label="Profession" errorMsg="" />
+                    <div className="custom-select">
+                        <Select options={["criminal", "droid", "jedi", "sith"]} name="profession" selected={type} onChange={onChange} />
+                    </div>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">{type === "Organic" ? "Species" : "Droid"} :</Typography>
@@ -127,27 +132,27 @@ const Add: FC = (props: Props): JSX.Element => {
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Status: </Typography>
-                    <InputText fieldName="add-edit-status" type="text" name="status" onChange={onChange} label="Status" />
+                    <InputText fieldName="add-edit-status" type="text" name="status" onChange={onChange}/>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Threat Level: </Typography>
-                    <InputText fieldName="add-edit-threat-level" type="text" name="threat_level" onChange={onChange} label="Threat Level" />
+                    <InputText fieldName="add-edit-threat-level" type="text" name="threat_level" onChange={onChange} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Last Known Location: </Typography>
-                    <InputText fieldName="add-edit-last-known-location" type="text" name="last_known_location" onChange={onChange} label="Last Location" />
+                    <InputText fieldName="add-edit-last-known-location" type="text" name="last_known_location" onChange={onChange}/>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Crimes: </Typography>
-                    <InputText fieldName="add-edit-crimes" type="text" name="crimes" onChange={onChange} label="Crimes" />
+                    <InputText fieldName="add-edit-crimes" type="text" name="crimes" onChange={onChange} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Wanted Condition: </Typography>
-                    <InputText fieldName="add-edit-wanted-condition" type="text" name="wanted_condition" onChange={onChange} label="Wanted Condition" />
+                    <InputText fieldName="add-edit-wanted-condition" type="text" name="wanted_condition" onChange={onChange} />
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Bounty (Number): </Typography>
-                    <InputText fieldName="add-edit-bounty" type="text" name="bounty" onChange={onChange} label="Bounty" />
+                    <InputText fieldName="add-edit-bounty" type="text" name="bounty" onChange={onChange} />
                 </div>
             </div>
         </div>

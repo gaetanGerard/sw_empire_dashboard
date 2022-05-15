@@ -46,6 +46,23 @@
 
         .add-edit-form {
             align-content: start;
+            .content-container {
+                .text-container {
+                    .form-container {
+                        .form-field {
+                            .form-field-control {
+                                label {
+                                    display: none;
+                                }
+                                input {
+                                    margin: 0;
+                                    padding: 10px 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
