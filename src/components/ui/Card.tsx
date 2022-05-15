@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+// Import Components
+import Typography from './Typography';
 
 // Import Types
 import { WANTED } from '../../context/types';
@@ -11,11 +15,26 @@ type Props = {
 }
 
 const Card = ({wanted}: Props) => {
+    const [imgSrc, setImgSrc] = useState('');
 
-    console.log(wanted)
+    const loadImage = (imageName: string) => {
+        import(`../../images/${imageName}`).then(image => {
+            setImgSrc(image.default)
+        })
+    }
+
+    loadImage(wanted.picture);
+
 
   return (
-    <div className="card">Card</div>
+    <Link to="/wanted-profile-detail" className="card" state={{data: wanted}}>
+        <div className="internal-card">
+            <img src={imgSrc} alt={`Wanted ${wanted.name}`} className={wanted.status === "Dead" ? "grayscale" : ""} />
+            <div className={wanted.status === "Captured" ? "wanted-status ws-white" : wanted.status === "Dead" ? "wanted-status ws-white" : "wanted-status ws-red"}>
+                <Typography HTMLElement="p">{wanted.status}</Typography>
+            </div>
+        </div>
+    </Link>
   )
 }
 

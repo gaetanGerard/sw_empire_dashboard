@@ -45,26 +45,6 @@ const Home = (props: Props) => {
           {wantedList.map((item, index) => (
             <Card key={index} wanted={item} />
           ))}
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
-          <Card wanted={wantedList[0]}/>
         </div>
       </div>
     )

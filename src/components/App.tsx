@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import IntrusionAlert from './pages/IntrusionAlert';
 import RequiredAuth from './ui/RequiredAuth';
+import Description from './pages/Description';
 
 /*
 *
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Auth />} />
         <Route path="/home" element={<RequiredAuth><Home /></RequiredAuth>} />
+        <Route path="/wanted-profile-detail" element={<RequiredAuth><Description /></RequiredAuth>} />
         <Route path="/intrusion-alert" element={<IntrusionAlert />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

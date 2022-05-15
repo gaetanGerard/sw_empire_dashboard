@@ -9,8 +9,15 @@
     overflow: hidden;
     font-family: $aurebesh;
     color: $unity-white;
+    border: none;
+    width: 215px;
+    height: 45px;
     &:hover {
+        display: grid;
+        align-content: center;
+        align-items: center;
         cursor: pointer;
+        font-family: "starwars";
         &:before {
             opacity: 1;
             transform: translate(0,0);
