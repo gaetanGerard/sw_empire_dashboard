@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound';
 import IntrusionAlert from './pages/IntrusionAlert';
 import RequiredAuth from './ui/RequiredAuth';
 import Description from './pages/Description';
+import Add from './pages/Add';
 
 /*
 *
@@ -22,7 +23,6 @@ import Description from './pages/Description';
 *
 */
 
-// TODO: Work on Card for display item
 // TODO: when click on Card i should see the description of the profile
 // TODO: i should as i am a logged in user have the possibility to Edit
 // TODO: on Admin Page i should also have a list of all profiles but also have the possiblity Add a new profile and also delete and update the profile
@@ -35,6 +35,7 @@ function App() {
         <Route path="/" element={<Auth />} />
         <Route path="/home" element={<RequiredAuth><Home /></RequiredAuth>} />
         <Route path="/wanted-profile-detail" element={<RequiredAuth><Description /></RequiredAuth>} />
+        <Route path="/wanted-profile-detail/:action" element={<RequiredAuth><Add /></RequiredAuth>} />
         <Route path="/intrusion-alert" element={<IntrusionAlert />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

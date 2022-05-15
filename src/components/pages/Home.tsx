@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // Import Styles
 import '../../styles/home.scss';
@@ -7,6 +8,8 @@ import '../../styles/home.scss';
 import Loading from '../ui/Loading';
 import Card from '../ui/Card';
 import Header from '../ui/Header';
+import Typography from '../ui/Typography';
+import User from '../ui/icons/User';
 
 // Import Context
 import { AuthContext } from '../../context/auth/AuthProvider';
@@ -14,6 +17,7 @@ import { WantedContext } from '../../context/wanted/WantedProvider';
 
 // Import data for initialization
 import data from '../../data/initList.json';
+
 
 
 type Props = {}
@@ -42,6 +46,14 @@ const Home = (props: Props) => {
       <div className="home-container">
         <Header />
         <div className="card-container">
+          <Link to="/wanted-profile-detail/add" className="card">
+            <div className="internal-card add-user-card">
+              <User className="add-user-icon" />
+              <div className={"wanted-status ws-grey"}>
+                  <Typography HTMLElement="p">Add</Typography>
+              </div>
+            </div>
+          </Link>
           {wantedList.map((item, index) => (
             <Card key={index} wanted={item} />
           ))}

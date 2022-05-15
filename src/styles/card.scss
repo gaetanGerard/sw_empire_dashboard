@@ -28,6 +28,11 @@
                 filter: grayscale(100%);
             }
         }
+        svg {
+            fill: $durasteel-grey;
+            height: 150px;
+            width: 150px;
+        }
         .wanted-status {
             z-index: 100;
             position: absolute;
@@ -47,12 +52,24 @@
                 @include wanted-border($color: $imperial-red);
                 color: $imperial-red;
             }
+            &.ws-grey {
+                @include wanted-border($color: $unity-white);
+                color: $unity-white;
+            }
         }
+    }
+    .add-user-card {
+        display: grid;
+        justify-content: center;
+        align-content: center;
     }
     &:hover {
         .internal-card {
             img {
                 transform: scale(1.15);
+            }
+            .wanted-status p {
+                font-family: "starwars";
             }
         }
     }

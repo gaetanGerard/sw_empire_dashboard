@@ -14,7 +14,7 @@ const Typography = (props: TypoProps): JSX.Element => {
     const Component = props.HTMLElement ? props.HTMLElement : "p";
 
     return (
-        <Component className={`typography-${props.HTMLElement} ${props.className}`} onMouseEnter={starwars} onMouseLeave={aurebesh}>{props.children}</Component>
+        <Component className={`typography-${props.HTMLElement} ${props.className ? props.className : ""}`} onMouseEnter={starwars} onMouseLeave={aurebesh}>{props.children}</Component>
     )
 }
 
