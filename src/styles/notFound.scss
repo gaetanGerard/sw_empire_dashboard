@@ -2,11 +2,13 @@
 @import "./mixin.scss";
 
 .container {
-    width: 90vw;
+    width: 100vw;
     display: grid;
     grid-auto-flow: column;
-    gap: 50px;
+    grid-template-columns: 50% 50%;
     justify-content: space-between;
+    justify-items: center;
+    align-content: center;
     .backHome-container {
         position: relative;
         display: grid;
@@ -52,7 +54,7 @@
 }
 
   .propaganda-container {
-    margin: 0 auto;
+    margin: 1% auto;
     height: 910px;
     width: 653px;
     transform-style: preserve-3d;

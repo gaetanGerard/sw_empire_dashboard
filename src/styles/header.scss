@@ -1,0 +1,20 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+header.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 96%;
+    height: 80px;
+    display: grid;
+    padding: 0 2%;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $coruscant-blue;
+    box-shadow: 0px 5px 7px 0px rgba(57,74,89,0.30);
+    .empire-icon {
+        @include logo();
+    }
+}

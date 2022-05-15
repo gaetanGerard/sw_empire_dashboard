@@ -1,0 +1,18 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+
+.home-container {
+    position: relative;
+    width: 100vw;
+    overflow-y: auto;
+    min-height: 100vh;
+    .card-container {
+        margin-top: 120px;
+        padding: 0 2%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+}

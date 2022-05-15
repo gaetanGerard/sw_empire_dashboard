@@ -10,7 +10,6 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import IntrusionAlert from './pages/IntrusionAlert';
 import RequiredAuth from './ui/RequiredAuth';
-import Admin from './pages/Admin';
 
 /*
 *
@@ -34,7 +33,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Auth />} />
         <Route path="/home" element={<RequiredAuth><Home /></RequiredAuth>} />
-        <Route path="/admin" element={<RequiredAuth><Admin /></RequiredAuth>} />
         <Route path="/intrusion-alert" element={<IntrusionAlert />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

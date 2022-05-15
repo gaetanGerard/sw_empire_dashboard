@@ -1,7 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 
+// Import Styles
+import '../../styles/home.scss';
+
 // Import Components
 import Loading from '../ui/Loading';
+import Card from '../ui/Card';
+import Header from '../ui/Header';
 
 // Import Context
 import { AuthContext } from '../../context/auth/AuthProvider';
@@ -34,7 +39,34 @@ const Home = (props: Props) => {
 
   if(localStorage.getItem('wantedList') !== null && wantedList) {
     return (
-      <div></div>
+      <div className="home-container">
+        <Header />
+        <div className="card-container">
+          {wantedList.map((item, index) => (
+            <Card key={index} wanted={item} />
+          ))}
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+          <Card wanted={wantedList[0]}/>
+        </div>
+      </div>
     )
   } else {
     return <Loading />
