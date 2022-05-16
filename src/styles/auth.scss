@@ -10,3 +10,9 @@
     align-content: center;
     gap: 20px;;
 }
+
+@media only screen and (max-width: 1024px) {
+    .auth-container {
+        font-family: "starwars";
+    }
+}

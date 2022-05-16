@@ -164,7 +164,7 @@ const Add: FC = (props: Props): JSX.Element => {
   return (
     <div className="wanted-profile-detail-container">
     <Header />
-    <div className="wanted-profile-detail">
+    <div className="wanted-profile-detail add-edit">
         <div className="img-container add-edit-wanted">
             <img src={picture !== null ? picture : noImg} alt={"Placeholder"} />
             {params.action === "edit" ? null : (<label className="checkbox-container">Use Picture from Database ?

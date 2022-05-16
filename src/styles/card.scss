@@ -74,3 +74,17 @@
         }
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .card-container {
+        font-family: "starwars";
+    }
+}
+
+@media only screen and (max-width: 413px) {
+    .card-container {
+        justify-content: center;
+        justify-items: center;
+        margin-bottom: 20px;
+    }
+}

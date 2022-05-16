@@ -15,7 +15,7 @@ type BtnProps = {
 
 const Button = ({ btnType, className, children, onClick, disabled, name, dataHover }: BtnProps): JSX.Element  => {
   return (
-    <button type={btnType} data-hover={dataHover} className={`btn ${className}`} disabled={disabled} onClick={onClick} name={name}>
+    <button type={btnType} data-hover={dataHover} className={`btn ${className ? className : ""}`} disabled={disabled} onClick={onClick} name={name}>
         {children}
     </button>
   )

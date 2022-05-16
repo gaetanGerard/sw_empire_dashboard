@@ -95,3 +95,60 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 1024px) {
+    .wanted-profile-detail-container {
+        font-family: "starwars";
+        height: 100%;
+        margin-bottom: 20px;
+        .wanted-profile-detail {
+            margin-top: 20px;
+            grid-template-columns: 320px auto;
+            align-content: start;
+            align-items: start;
+            height: 100%;
+            .wanted-description-container {
+                height: 100%;
+                gap: 20px;
+                .content-container {
+                    align-self: start
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .wanted-profile-detail-container  {
+        .wanted-profile-detail {
+            grid-template-columns: 1fr;
+            .wanted-description-container {
+                padding: 0 20px;
+
+                .content-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .wanted-profile-detail-container {
+        .wanted-profile-detail {
+            .wanted-description-container {
+                padding: 0 5px;
+                .content-container {
+                    font-size: $font-size-extra-small;
+                    .text-container {
+                        grid-template-columns: 160px auto;
+                        .bold {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

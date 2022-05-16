@@ -1,7 +1,7 @@
 @import "./variables.scss";
 @import "./mixin.scss";
 
-.container {
+.not-found-container {
     width: 100vw;
     display: grid;
     grid-auto-flow: column;
@@ -239,3 +239,107 @@
     font-size: 3em;
     margin-top: -25px;
   }
+
+
+@media only screen and (max-width: 1280px) {
+  .not-found-container {
+    width: 98vw;
+    font-family: "starwars";
+
+    .backHome-container {
+      p {
+        font-size: $font-size-normal-small;
+        width: 80%;
+      }
+      a {
+        width: 150px;
+      }
+      footer {
+        right: 5%;
+      }
+    }
+
+    .propaganda-container {
+      height: 600px;
+      width: 450px;
+      #moon {
+        width: 400px;
+        height: 400px;
+        top: -200px;
+        left: 200px;
+      }
+      #stars {
+        .stars {
+          width: 420px;
+        }
+        .rstars {
+          margin-left: 220px;
+          margin-top: 0;
+          height: 70px;
+        }
+      }
+      #ships {
+        .ships {
+          #sd3 {
+            margin-top: -220px;
+            margin-left: 0px;
+          }
+          #sd4 {
+            margin-top: 110px;
+            margin-left: 25px;
+          }
+          #sd1 {
+            margin-top: -300px;
+            margin-left: -20px;
+          }
+          #sd2 {
+            margin-top: -80px;
+            margin-left: 270px;
+          }
+          #ship {
+            margin-left: 210px;
+            margin-top: -20px;
+          }
+        }
+        .ships.ties {
+          margin-top: -190px
+        }
+      }
+      #message {
+        margin-top: -640px;
+        .rb {
+          font-size: 1.45em;
+          margin-bottom: 10px;
+        }
+        .join {
+          font-size: 1.45em;
+          margin-bottom: 0;
+          margin-left: 180px;
+        }
+        img {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .not-found-container {
+    grid-auto-flow: row;
+    grid-template-columns: none;
+    gap: 20px;
+    margin: 20px 0;
+    justify-content: center;
+    justify-items: center;
+    .backHome-container {
+      p {
+        width: 50%;
+      }
+      footer {
+        right: 50%;
+        bottom: -20px;
+      }
+    }
+  }
+}

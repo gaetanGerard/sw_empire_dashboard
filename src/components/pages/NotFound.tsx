@@ -11,7 +11,7 @@ type Props = {}
 
 const NotFound = (props: Props) => {
   return (
-    <div className="container">
+    <div className="not-found-container">
       <div className="backHome-container">
         <Empire className="empire-icon" />
         <p>You are not where you should be ! Wait for the law enforcer</p>

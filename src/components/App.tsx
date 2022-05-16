@@ -14,13 +14,7 @@ import Description from './pages/Description';
 import Add from './pages/Add';
 
 //TODO: NEXT STEPS
-//TODO: finalize digest of data for the add/edit form
-//TODO: valide function for add a profile is working
-//TODO: validate function for edit a profile is working
-//TODO: validate function for remove a profile is working
-//TODO: Add Loading animation when data are loading
 //TODO: Search for bugs
-//TODO: Improve Responsive as much as its can be
 
 function App() {
   return (
