@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useLocation, Link } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from 'react'
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 
 // Import Styles
 import '../../styles/description.scss';
@@ -12,15 +12,32 @@ import Header from '../ui/Header';
 import Typography from '../ui/Typography';
 import Button from '../ui/Button';
 
+// Import Context
+import { WantedContext } from '../../context/wanted/WantedProvider';
+
 type Props = {}
 
 const Description = (props: Props) => {
+    const { wantedList, initializeWantedList, deleteWanted } = useContext(WantedContext);
+    const navigate = useNavigate();
     const location = useLocation();
     const state = location.state as { data: WANTED };
 
+    useEffect(() => {
+        if(wantedList === null) initializeWantedList(JSON.parse(localStorage.getItem('wantedList') || '[]'));
+    }, [wantedList, initializeWantedList]);
+
     const onclick = () => {
         // function for delete Item
-        console.log("nothing here : DELETE")
+        deleteWanted(state.data.id);
+        const wantedL = JSON.parse(localStorage.getItem('wantedList') || '[]');
+
+        // function for update localStorage
+        const newArr = wantedL.filter((item: any )=> item.id !== state.data.id);
+
+        initializeWantedList(newArr);
+        localStorage.setItem('wantedList', JSON.stringify(newArr));
+        navigate("/home")
     }
 
   return (

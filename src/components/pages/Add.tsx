@@ -157,7 +157,7 @@ const Add: FC = (props: Props): JSX.Element => {
             setPicture(noImg);
         }
 
-    }, [type, profession, params.action, species, droid, pictureFromDBBool, picture, noImg, disabled]);
+    }, [type, profession, params.action, species, droid, pictureFromDBBool, picture, noImg, disabled, wantedList, initializeWantedList]);
 
     // console.log(species)
 
@@ -202,7 +202,9 @@ const Add: FC = (props: Props): JSX.Element => {
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Status: </Typography>
-                    <InputText fieldName="add-edit-status" type="text" name="status" onChange={onChange} value={status}/>
+                    <div className="custom-select">
+                        <Select options={["Wanted", "Dead", "Captured"]} name="status" selected={status} onChange={onChange} />
+                    </div>
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Threat Level: </Typography>
