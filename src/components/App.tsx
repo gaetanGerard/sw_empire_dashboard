@@ -13,20 +13,14 @@ import RequiredAuth from './ui/RequiredAuth';
 import Description from './pages/Description';
 import Add from './pages/Add';
 
-/*
-*
-*
-* For Edit i should look if i can add a parameter or a state to the route for i reuse the add component
-* example i click on a card and after on a button edit who should redirect me to the add form but with
-* the information send by the card
-*
-*
-*/
-
-// TODO: when click on Card i should see the description of the profile
-// TODO: i should as i am a logged in user have the possibility to Edit
-// TODO: on Admin Page i should also have a list of all profiles but also have the possiblity Add a new profile and also delete and update the profile
-// ! The initial list should be possible to edit status but not to delete i should add a field for prevent deletion
+//TODO: NEXT STEPS
+//TODO: finalize digest of data for the add/edit form
+//TODO: valide function for add a profile is working
+//TODO: validate function for edit a profile is working
+//TODO: validate function for remove a profile is working
+//TODO: Add Loading animation when data are loading
+//TODO: Search for bugs
+//TODO: Improve Responsive as much as its can be
 
 function App() {
   return (

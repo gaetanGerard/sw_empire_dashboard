@@ -40,7 +40,7 @@ const Add: FC = (props: Props): JSX.Element => {
     const [bounty, setBounty] = useState<string>(params.action === "edit" ? state.data.bounty : '');
     const [pictureFromDBBool, setPictureFromDBBool] = useState<boolean>(false);
 
-    const [speciesList, setSpeciesList] = useState<string[]>([]);
+    const [speciesList, setSpeciesList] = useState<any>([]);
 
 
     // console.log(params.action)
@@ -78,20 +78,34 @@ const Add: FC = (props: Props): JSX.Element => {
             picture: noImg,
             canBeDeleted: true
         }
-
-        console.log(data);
+        // console.log(data);
     }
 
 
     useEffect(() => {
-        setSpeciesList(data.species[type as keyof typeof data.species]);
+        if(profession) {
+            // console.log(profession)
+            setSpeciesList(data[profession as keyof typeof data]);
+            // console.log(folderLength[profession as keyof typeof folderLength]);
+        }
+        if(type === 'Droid') {
+            setSpeciesList(data["droid" as keyof typeof data]);
+        }
 
-        console.log(folderLength);
+        // console.log(folderLength);
 
 
-    }, [type]);
+        if(params.action === "add" && pictureFromDBBool === true) {
+            if(type === "Organic" && species && profession) {
+                const lengthNum = (folderLength as any)[profession][species]
+                const randNum = Math.floor(Math.random() * lengthNum);
+                console.log(randNum);
+            }
+        }
 
-    console.log(species)
+    }, [type, profession, params.action, species, droid, pictureFromDBBool]);
+
+    // console.log(species)
 
   return (
     <div className="wanted-profile-detail-container">
@@ -122,9 +136,9 @@ const Add: FC = (props: Props): JSX.Element => {
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">Profession: </Typography>
-                    <div className="custom-select">
-                        <Select options={["Criminal", "Droid", "Jedi", "Sith"]} name="profession" selected={profession} onChange={onChange} />
-                    </div>
+                    {type === "Organic" ? (<div className="custom-select">
+                        <Select options={["criminal", "jedi", "sith"]} name="profession" selected={profession} onChange={onChange} />
+                    </div>) : <Typography HTMLElement="p">Droid</Typography>}
                 </div>
                 <div className="text-container">
                     <Typography HTMLElement="p" className="bold">{type === "Organic" ? "Species" : "Droid"} :</Typography>

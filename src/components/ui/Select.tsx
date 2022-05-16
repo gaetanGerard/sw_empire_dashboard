@@ -13,12 +13,10 @@ type SelectProps = {
 }
 
 const Select = ({options, onChange, name, selected}: SelectProps): JSX.Element => {
-
-  console.log(selected)
-
     return (
         <div className="select-arrow">
             <select name={name} onChange={onChange} value={selected ? selected : ''}>
+                <option>Select {name}</option>
                 {options.map((option, i) => (
                     <option value={option} key={i++}>{option}</option>
                 ))}
