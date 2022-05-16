@@ -39,6 +39,8 @@ const Add: FC = (props: Props): JSX.Element => {
     const [wantedCondition, setWantedCondition] = useState<string>(params.action === "edit" ? state.data.wanted_condition : '');
     const [bounty, setBounty] = useState<string>(params.action === "edit" ? state.data.bounty : '');
     const [pictureFromDBBool, setPictureFromDBBool] = useState<boolean>(false);
+    const [picture, setPicture] = useState<string|null>(params.action === "edit" ? state.data.picture : null);
+    const [disabled, setDisabled] = useState<boolean>(true);
 
     const [speciesList, setSpeciesList] = useState<any>([]);
 
@@ -63,22 +65,38 @@ const Add: FC = (props: Props): JSX.Element => {
 
 
     const onclick = () => {
-        const data = {
-            name: wantedName,
-            type: type,
-            profession: profession,
-            species: species,
-            droid: droid,
-            status: status,
-            threat_level: threatLevel,
-            last_known_location: lastKnownLocation,
-            crimes: crimes,
-            wanted_condition: wantedCondition,
-            bounty: bounty,
-            picture: noImg,
-            canBeDeleted: true
+        if(
+            wantedName === "" ||
+            type === "NO" ||
+            profession === "NO" ||
+            species === "NO" ||
+            droid === "NO" ||
+            status === "" ||
+            threatLevel === "" ||
+            lastKnownLocation === "" ||
+            crimes === "" ||
+            wantedCondition === "" ||
+            bounty === "") {
+            setDisabled(true);
+        } else {
+            const data = {
+                name: wantedName,
+                type: type,
+                profession: profession,
+                species: species,
+                droid: droid,
+                status: status,
+                threat_level: threatLevel,
+                last_known_location: lastKnownLocation,
+                crimes: crimes,
+                wanted_condition: wantedCondition,
+                bounty: bounty,
+                picture: picture !== null ? picture : noImg,
+                canBeDeleted: true
+            }
+
+            console.log(data);
         }
-        // console.log(data);
     }
 
 
@@ -96,14 +114,21 @@ const Add: FC = (props: Props): JSX.Element => {
 
 
         if(params.action === "add" && pictureFromDBBool === true) {
+            setPicture(noImg);
             if(type === "Organic" && species && profession) {
                 const lengthNum = (folderLength as any)[profession][species]
                 const randNum = Math.floor(Math.random() * lengthNum);
-                console.log(randNum);
+                setPicture(`/images/${profession}/${species}/${randNum}.jpg`);
+            } else if(type === "Droid" && droid) {
+                const lengthNum = (folderLength as any)["droid"][droid]
+                const randNum = Math.floor(Math.random() * lengthNum);
+                setPicture(`/images/droid/${droid}/${randNum}.jpg`);
             }
+        } else if(!pictureFromDBBool) {
+            setPicture(noImg);
         }
 
-    }, [type, profession, params.action, species, droid, pictureFromDBBool]);
+    }, [type, profession, params.action, species, droid, pictureFromDBBool, picture, noImg, disabled]);
 
     // console.log(species)
 
@@ -112,13 +137,13 @@ const Add: FC = (props: Props): JSX.Element => {
     <Header />
     <div className="wanted-profile-detail">
         <div className="img-container add-edit-wanted">
-            <img src={params.action === "edit" ? state.data.picture : noImg} alt={"Placeholder"} />
+            <img src={picture !== null ? picture : noImg} alt={"Placeholder"} />
             {params.action === "edit" ? null : (<label className="checkbox-container">Use Picture from Database ?
                 <input type="checkbox" onChange={(e) => setPictureFromDBBool(e.target.checked)} name="pictureFromDB" />
                 <span className="checkmark"></span>
             </label>)}
             <div className="btn-container">
-                <Button btnType="button" className="btn-detail" onClick={onclick}>{params.action === "edit" ? "Edit" : "Add"}</Button>
+                <Button btnType="button" className={`${disabled === true ? "btn-disabled" : "btn-detail"}`} onClick={onclick}>{params.action === "edit" ? "Edit" : "Add"}</Button>
                 <Link to="/home" className="btn-cancel">Cancel</Link>
             </div>
         </div>
