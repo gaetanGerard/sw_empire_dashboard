@@ -1,7 +1,7 @@
 {
     "profiles": [
         {
-            "id": 0,
+            "id": "0",
             "name": "Obi-wan Kenobi",
             "type": "Organic",
             "profession": "jedi",
@@ -17,7 +17,7 @@
             "canBeDeleted": false
         },
         {
-            "id": 1,
+            "id": "1",
             "name": "Watto",
             "type": "Organic",
             "profession": "criminal",
@@ -33,7 +33,7 @@
             "canBeDeleted": false
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Maldraxxa The Hutt",
             "type": "Organic",
             "profession": "criminal",
@@ -49,7 +49,7 @@
             "canBeDeleted": false
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Jar Jar Binks",
             "type": "Organic",
             "profession": "sith",
@@ -65,7 +65,7 @@
             "canBeDeleted": false
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Dark Maul",
             "type": "Organic",
             "profession": "sith",
@@ -81,7 +81,7 @@
             "canBeDeleted": false
         },
         {
-            "id": 5,
+            "id": "5",
             "name": "z5-p5",
             "type": "Droid",
             "profession": "droid",

@@ -3,13 +3,10 @@ import { WantedContextState, WANTED } from '../types';
 
 const contextDefaultValue: WantedContextState = {
     wantedList: null,
-    wanted: null,
     initializeWantedList: () => {},
-    getWanted: () => {},
     addWanted: () => {},
     updateWanted: () => {},
     deleteWanted: () => {},
-    setWanted: () => {},
     setWantedError: () => {},
     wantedError: null,
 };
@@ -21,22 +18,11 @@ type WantedProviderProps = {
 export const WantedContext = createContext<WantedContextState>(contextDefaultValue);
 
 const WantedProvider: FC<WantedProviderProps> = ({children}) => {
-    const [wanted, setWanted] = useState<WANTED|null>(null);
     const [wantedList, setWantedList] = useState<WANTED[]|null>(null);
     const [wantedError, setWantedError] = useState<string|null>(null);
 
     const initializeWantedList = (payload: WANTED[]) => {
         setWantedList(payload);
-    };
-
-    const getWanted = (id: number) => {
-        if(wantedList) {
-            for(let i = 0; i < wantedList.length; i++) {
-                if(wantedList[i].id === id) {
-                    setWanted(wantedList[i]);
-                }
-            }
-        }
     };
 
     const addWanted = (wanted: WANTED) => {
@@ -57,7 +43,7 @@ const WantedProvider: FC<WantedProviderProps> = ({children}) => {
         }
     };
 
-    const deleteWanted = (id: number) => {
+    const deleteWanted = (id: string) => {
         if(wantedList) {
             const newWantedList = wantedList.filter((item: WANTED) => {
                 return item.id !== id;
@@ -67,7 +53,7 @@ const WantedProvider: FC<WantedProviderProps> = ({children}) => {
     };
 
     return (
-        <WantedContext.Provider value={{initializeWantedList, wanted, wantedList, wantedError, getWanted, addWanted, updateWanted, deleteWanted, setWanted, setWantedError}}>
+        <WantedContext.Provider value={{initializeWantedList, wantedList, wantedError, addWanted, updateWanted, deleteWanted, setWantedError}}>
             {children}
         </WantedContext.Provider>
     );

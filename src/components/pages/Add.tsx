@@ -1,5 +1,6 @@
-import React, { ChangeEvent, useState, useEffect, FC } from 'react';
-import { useLocation, useParams, Link } from 'react-router-dom';
+import React, { ChangeEvent, useState, useEffect, FC, useContext } from 'react';
+import { useLocation, useParams, Link, useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 // Import Types
 import { WANTED } from '../../context/types';
@@ -20,14 +21,19 @@ import '../../styles/checkbox.scss';
 import data from '../../data/species.json';
 import folderLength from '../../data/foldersLength.json';
 
+// Import Context
+import { WantedContext } from '../../context/wanted/WantedProvider';
+
 type Props = {}
 
 const Add: FC = (props: Props): JSX.Element => {
+    const { wantedList, initializeWantedList, addWanted, updateWanted } = useContext(WantedContext);
     const location = useLocation();
     const params = useParams();
+    const navigate = useNavigate();
     const state = location.state as { data: WANTED };
     const [noImg, setNoImg] = useState('/images/no_image.png');
-    const [wantedName, setWantedName] = useState<string|null>(params.action === "edit" ? state.data.name : null);
+    const [wantedName, setWantedName] = useState<string>(params.action === "edit" ? state.data.name : "");
     const [type, setType] = useState<string>(params.action === "edit" ? state.data.type : 'Organic');
     const [profession, setProfession] = useState<string>(params.action === "edit" ? state.data.profession : '');
     const [species, setSpecies] = useState<string|null>(params.action === "edit" ? state.data.species : null);
@@ -79,7 +85,9 @@ const Add: FC = (props: Props): JSX.Element => {
             bounty === "") {
             setDisabled(true);
         } else {
+            const uniqueId = uuidv4();
             const data = {
+                id: params.action === "edit" ? state.data.id : uniqueId,
                 name: wantedName,
                 type: type,
                 profession: profession,
@@ -94,13 +102,34 @@ const Add: FC = (props: Props): JSX.Element => {
                 picture: picture !== null ? picture : noImg,
                 canBeDeleted: true
             }
+            if(params.action === "add") {
+                addWanted(data);
 
-            console.log(data);
+                const wantedL = JSON.parse(localStorage.getItem('wantedList') || '[]');
+
+                const newArr = [...wantedL, data];
+
+                initializeWantedList(newArr);
+                localStorage.setItem('wantedList', JSON.stringify(newArr));
+                navigate("/home")
+            } else if (params.action === "edit") {
+                updateWanted(data)
+                const wantedL = JSON.parse(localStorage.getItem('wantedList') || '[]');
+
+                const newArr = wantedL.map((wanted: any) => wanted.id === state.data.id ? data : wanted);
+
+                initializeWantedList(newArr);
+                localStorage.setItem('wantedList', JSON.stringify(newArr));
+                navigate("/home")
+            }
+
         }
     }
 
 
     useEffect(() => {
+        if(wantedList === null) initializeWantedList(JSON.parse(localStorage.getItem('wantedList') || '[]'));
+
         if(profession) {
             // console.log(profession)
             setSpeciesList(data[profession as keyof typeof data]);
@@ -124,7 +153,7 @@ const Add: FC = (props: Props): JSX.Element => {
                 const randNum = Math.floor(Math.random() * lengthNum);
                 setPicture(`/images/droid/${droid}/${randNum}.jpg`);
             }
-        } else if(!pictureFromDBBool) {
+        } else if(!pictureFromDBBool && params.action === "add") {
             setPicture(noImg);
         }
 

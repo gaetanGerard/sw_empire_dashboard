@@ -13,12 +13,12 @@ export type UserContextState = {
 // Wanted Types
 
 export type WANTED = {
-    id: number,
+    id: string,
     name: string,
     type: string,
     profession: string,
-    species: string,
-    droid: string,
+    species: string|null,
+    droid: string|null,
     picture: string,
     status: string,
     threat_level: string,
@@ -31,13 +31,10 @@ export type WANTED = {
 
 export type WantedContextState = {
     wantedList: WANTED[] | null,
-    wanted: WANTED | null,
     wantedError: string | null,
     initializeWantedList: (payload: WANTED[]) => void,
-    getWanted: (id: number) => void,
     addWanted: (wanted: WANTED) => void,
     updateWanted: (wanted: WANTED) => void,
-    deleteWanted: (id: number) => void,
-    setWanted: (wanted: WANTED) => void,
+    deleteWanted: (id: string) => void,
     setWantedError: (error: string) => void,
 }
