@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: sw-empire-dashboard-prod
+    image: sw-empire-dashboard-prod
+    build:
+      context: .
+      target: production
+    ports:
+      - "80:80"
