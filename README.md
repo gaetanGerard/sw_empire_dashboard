@@ -28,3 +28,17 @@ Please follow those step for install on your DataPad the TMS application.
 8) its not working ? its not normal its should as Lord Vador always say "its worked on my machine" you can contact the Support Office but be aware of the long awaiting (as they are all currently trying to fix a glitch in the Emperor Meditation Room)
 
 Thank You for This short Presentation and Long Live The Empire
+
+N.B. This app can also be used with docker for development or production build
+
+2 solution for that:
+
+1) - If you not download the repo
+   - `docker pull gge2705/sw-empire-dashboard:1.0` (DEV) || `docker pull gge2705/sw-empire-dashboard:latest` (PROD)
+   - `docker run -p 3000:3000 -d --name sw-empire-dashboard-dev gge2705/sw-empire-dashboard:1.0` (DEV) || `docker run -p 80:80 -d --name sw-empire-dashboard-prod gge2705/sw-empire-dashboard:latest` (PROD)
+
+2) - If you download the repo
+   - `npm run dev` || `npm run prod` (Build image / Create container & network)
+   - `npm run dev-down` || `npm run prod-down` (Stop & Remove container & network)
+   - `docker images` (for list image)
+   - `docker image rm IMAGEID` (remove image from machine replace IMAGEID by the id find with docker images command)

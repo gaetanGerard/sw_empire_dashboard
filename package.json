@@ -25,7 +25,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "docker-compose -f docker-compose.dev.yml up -d"
+    "dev": "docker-compose -f docker-compose.dev.yml up -d",
+    "prod": "docker-compose -f docker-compose.prod.yml up -d",
+    "dev-down": "docker-compose -f docker-compose.dev.yml down",
+    "prod-down": "docker-compose -f docker-compose.prod.yml down"
   },
   "eslintConfig": {
     "extends": [
