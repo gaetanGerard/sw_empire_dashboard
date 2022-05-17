@@ -100,7 +100,7 @@ const Add: FC = (props: Props): JSX.Element => {
                 wanted_condition: wantedCondition,
                 bounty: bounty,
                 picture: picture !== null ? picture : noImg,
-                canBeDeleted: true
+                canBeDeleted: params.actions === "edit" ? state.data.canBeDeleted : true
             }
             if(params.action === "add") {
                 addWanted(data);

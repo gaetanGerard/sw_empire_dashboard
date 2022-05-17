@@ -14,7 +14,7 @@ import Description from './pages/Description';
 import Add from './pages/Add';
 
 //TODO: NEXT STEPS
-//TODO: Search for bugs
+//TODO: Dockerize the app
 
 function App() {
   return (
